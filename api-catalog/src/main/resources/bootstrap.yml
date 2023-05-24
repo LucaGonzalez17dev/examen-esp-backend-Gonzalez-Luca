@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: api-cagalog
+  cloud:
+    config:
+      enabled: true
+      url: http://localhost:8888

@@ -23,6 +23,9 @@
 
 	<modules>
 		<module>
+			api-gateway
+		</module>
+		<module>
 			eureka-server
 		</module>
 		<module>

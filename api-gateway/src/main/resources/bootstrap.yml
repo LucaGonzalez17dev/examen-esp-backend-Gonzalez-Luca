@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-catalog
+    name: api-gateway
   cloud:
     config:
       enabled: true

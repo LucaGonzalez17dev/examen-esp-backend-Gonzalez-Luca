@@ -37,6 +37,9 @@
 		<module>
 			api-movie
 		</module>
+		<module>
+			api-serie
+		</module>
 	</modules>
 
 

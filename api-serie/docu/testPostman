@@ -1,0 +1,47 @@
+GET http://localhost:PUERTO/api/v1/series/Dimensional
+
+
+
+###
+
+POST http://localhost:PUERTO/api/v1/series
+Content-Type: application/json
+
+{
+    "id": "0a89e273-1495-46a7-8fec-a7cbebd910C",
+    "name": "Serie C",
+    "genre": "Dimensional",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "chapters": [
+          {
+            "name": "Chapter A",
+            "number": 1,
+            "urlStream": "www.netflix.com/series/terror/1/season/1/chapter/1"
+          },
+          {
+            "name": "Chapter B",
+            "number": 2,
+            "urlStream": "www.netflix.com/series/terror/1/season/1/chapter/2"
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "chapters": [
+          {
+            "name": "Chapter A",
+            "number": 1,
+            "urlStream": "www.netflix.com/series/terror/1/season/2/chapter/1"
+          },
+          {
+            "name": "Chapter B",
+            "number": 2,
+            "urlStream": "www.netflix.com/series/terror/1/season/2/chapter/2"
+          }
+        ]
+      }
+    ]
+  }
+

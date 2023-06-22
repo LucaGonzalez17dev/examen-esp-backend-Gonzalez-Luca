@@ -27,4 +27,6 @@ public interface MovieServiceClient {
 		private String urlStream;
 	}
 
+
+
 }

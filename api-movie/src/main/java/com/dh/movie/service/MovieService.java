@@ -1,6 +1,7 @@
 package com.dh.movie.service;
 
 
+import com.dh.movie.event.PeliculaGuardadaEvent;
 import com.dh.movie.model.Movie;
 import com.dh.movie.repository.MovieRepository;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,11 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
 
-    public MovieService(MovieRepository movieRepository) {
+    private final PeliculaGuardadaEvent peliculaGuardadaEvent;
+
+    public MovieService(MovieRepository movieRepository, PeliculaGuardadaEvent peliculaGuardadaEvent) {
         this.movieRepository = movieRepository;
+        this.peliculaGuardadaEvent = peliculaGuardadaEvent;
     }
 
     public List<Movie> findByGenre(String genre) {
@@ -22,6 +26,7 @@ public class MovieService {
     }
 
     public Movie save(Movie movie) {
+        peliculaGuardadaEvent.guardarPelicula(movie);
         return movieRepository.save(movie);
     }
 }

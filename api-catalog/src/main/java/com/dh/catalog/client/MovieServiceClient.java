@@ -1,5 +1,6 @@
 package com.dh.catalog.client;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -12,8 +13,12 @@ import java.util.List;
 public interface MovieServiceClient {
 
 	@GetMapping("/api/v1/movies/{genre}")
+	@CircuitBreaker(name = "movieService", fallbackMethod = "fallbackGetMovieByGenre")
 	List<MovieDto> getMovieByGenre(@PathVariable (value = "genre") String genre);
 
+	default List<SerieServiceClient.SerieDto> fallbackGetMovieByGenre(String genre, Throwable e) throws Exception {
+		throw new Exception("En este momento no es posible retornar la lista de peliculas, intente mas tarde");
+	}
 
 	@Getter
 	@Setter

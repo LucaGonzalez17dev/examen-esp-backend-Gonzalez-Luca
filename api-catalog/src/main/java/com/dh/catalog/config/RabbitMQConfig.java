@@ -13,11 +13,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String EXCHANGE_NAME = "backendExchange";
-    //poner topic serie
-    public static final String TOPIC_CATALOGO = "com.dh.backend.catalogo";
-    // poner queue serie
-    public static final String QUEUE_CATALOGO ="queueCatalogo";
+    public static final String EXCHANGE_NAME = "CatalogExchange";
+    public static final String TOPIC_GUARDAR_SERIE = "com.dh.backend.guardarSerie";
+    public static final String QUEUE_GUARDAR_SERIE ="queueGuardarSerie";
+    public static final String TOPIC_GUARDAR_PELICULA = "com.dh.backend.guardarPelicula";
+    public static final String QUEUE_GUARDAR_PELICULA ="queueGuardarPelicula";
 
     @Bean
     public TopicExchange appExchange() {
@@ -25,13 +25,23 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public Queue queueCatalogo(){
-        return new Queue(QUEUE_CATALOGO);
+    public Queue queueGuardarSerie(){
+        return new Queue(QUEUE_GUARDAR_SERIE);
     }
 
     @Bean
-    public Binding declareBindingSpecific(){
-        return BindingBuilder.bind(queueCatalogo()).to(appExchange()).with(TOPIC_CATALOGO);
+    public Binding topicGuardarSerie(){
+        return BindingBuilder.bind(queueGuardarSerie()).to(appExchange()).with(TOPIC_GUARDAR_SERIE);
+
+    }
+
+    @Bean
+    public Queue queueGuardarPelicula(){
+        return new Queue(QUEUE_GUARDAR_PELICULA);
+    }
+    @Bean
+    public Binding topicGuardarPelicula(){
+        return BindingBuilder.bind(queueGuardarSerie()).to(appExchange()).with(TOPIC_GUARDAR_PELICULA);
 
     }
 

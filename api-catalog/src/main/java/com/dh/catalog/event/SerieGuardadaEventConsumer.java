@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SerieGuardadaEventConsumer {
-    @RabbitListener(queues = RabbitMQConfig.QUEUE_CATALOGO)
+    @RabbitListener(queues = RabbitMQConfig.QUEUE_GUARDAR_SERIE)
     public void listen(SerieGuardadaEventConsumer.SerieDto serieDto){
 
     }

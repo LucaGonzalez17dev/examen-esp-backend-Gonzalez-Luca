@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PeliculaGuardadaEventConsumer {
-    @RabbitListener(queues = RabbitMQConfig.QUEUE_CATALOGO)
+    @RabbitListener(queues = RabbitMQConfig.QUEUE_GUARDAR_SERIE)
     public void listen(PeliculaGuardadaEventConsumer.Movie movie){
 
     }

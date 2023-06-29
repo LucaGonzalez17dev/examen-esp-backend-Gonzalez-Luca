@@ -19,7 +19,7 @@ public class SerieGuardadaEvent {
     }
 
     public void guardar(SerieGuardadaEvent.SerieDto serieDto) {
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.TOPIC_CATALOGO, serieDto);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.TOPIC_GUARDAR_SERIE, serieDto);
 
     }
 

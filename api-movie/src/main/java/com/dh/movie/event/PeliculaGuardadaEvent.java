@@ -20,7 +20,7 @@ public class PeliculaGuardadaEvent {
     }
 
     public  void guardarPelicula(Movie movie) {
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.TOPIC_CATALOGO, movie);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.TOPIC_GUARDAR_PELICULA, movie);
     }
 
 

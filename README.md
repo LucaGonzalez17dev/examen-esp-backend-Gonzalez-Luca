@@ -1,1 +1,1 @@
-# Examen de la especialización en backend de la carrera Certified Tech Developer de Digital House. Solución de microservicios en SpringCloud con EurekaServer, ConfigServer, comunicados a través de FeignClient y ruteados a un API-Gateway para ser consumidos. 
+# Examen de la especialización en backend de la carrera Certified Tech Developer de Digital House.
